@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "TbW1rzwup7zGVfTw95lEv/+JZJ3xTbpHJpvcI8QdCt916iRJHp0L6u46J1QmMW+nNK0fe0WioXZOhzPuM3T6kw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\schal\\source\\repos\\Maersk\\Schalex.StringCalculator\\Schalex.StringCalculator.Core\\Schalex.StringCalculator.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\schal\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\schal\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\schal\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\schal\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "30b64a54-999e-4aa0-840b-b34f7966a851": {
+      "ProjectGuid": "30b64a54-999e-4aa0-840b-b34f7966a851",
+      "DisplayName": "Schalex.StringCalculator",
+      "ColorIndex": 0
+    },
+    "1f95eeff-a11e-4c8a-92b2-f7da73f1a83f": {
+      "ProjectGuid": "1f95eeff-a11e-4c8a-92b2-f7da73f1a83f",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 1
+    },
+    "9a00136d-4576-4bbf-8ebe-7fb26fc28a45": {
+      "ProjectGuid": "9a00136d-4576-4bbf-8ebe-7fb26fc28a45",
+      "DisplayName": "Schalex.StringCalculator.UnitTests",
+      "ColorIndex": 2
+    },
+    "69e668c4-3c7c-461c-a166-6300d7e52ece": {
+      "ProjectGuid": "69e668c4-3c7c-461c-a166-6300d7e52ece",
+      "DisplayName": "Schalex.StringCalculator.Core",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 4
+}
