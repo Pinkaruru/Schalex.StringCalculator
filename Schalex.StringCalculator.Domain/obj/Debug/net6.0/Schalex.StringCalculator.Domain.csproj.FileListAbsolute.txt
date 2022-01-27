@@ -1,0 +1,12 @@
+C:\Users\schal\source\repos\Maersk\Schalex.StringCalculator\Schalex.StringCalculator.Domain\bin\Debug\net6.0\Schalex.StringCalculator.Domain.deps.json
+C:\Users\schal\source\repos\Maersk\Schalex.StringCalculator\Schalex.StringCalculator.Domain\bin\Debug\net6.0\Schalex.StringCalculator.Domain.dll
+C:\Users\schal\source\repos\Maersk\Schalex.StringCalculator\Schalex.StringCalculator.Domain\bin\Debug\net6.0\ref\Schalex.StringCalculator.Domain.dll
+C:\Users\schal\source\repos\Maersk\Schalex.StringCalculator\Schalex.StringCalculator.Domain\bin\Debug\net6.0\Schalex.StringCalculator.Domain.pdb
+C:\Users\schal\source\repos\Maersk\Schalex.StringCalculator\Schalex.StringCalculator.Domain\obj\Debug\net6.0\Schalex.StringCalculator.Domain.csproj.AssemblyReference.cache
+C:\Users\schal\source\repos\Maersk\Schalex.StringCalculator\Schalex.StringCalculator.Domain\obj\Debug\net6.0\Schalex.StringCalculator.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\schal\source\repos\Maersk\Schalex.StringCalculator\Schalex.StringCalculator.Domain\obj\Debug\net6.0\Schalex.StringCalculator.Domain.AssemblyInfoInputs.cache
+C:\Users\schal\source\repos\Maersk\Schalex.StringCalculator\Schalex.StringCalculator.Domain\obj\Debug\net6.0\Schalex.StringCalculator.Domain.AssemblyInfo.cs
+C:\Users\schal\source\repos\Maersk\Schalex.StringCalculator\Schalex.StringCalculator.Domain\obj\Debug\net6.0\Schalex.StringCalculator.Domain.csproj.CoreCompileInputs.cache
+C:\Users\schal\source\repos\Maersk\Schalex.StringCalculator\Schalex.StringCalculator.Domain\obj\Debug\net6.0\Schalex.StringCalculator.Domain.dll
+C:\Users\schal\source\repos\Maersk\Schalex.StringCalculator\Schalex.StringCalculator.Domain\obj\Debug\net6.0\ref\Schalex.StringCalculator.Domain.dll
+C:\Users\schal\source\repos\Maersk\Schalex.StringCalculator\Schalex.StringCalculator.Domain\obj\Debug\net6.0\Schalex.StringCalculator.Domain.pdb

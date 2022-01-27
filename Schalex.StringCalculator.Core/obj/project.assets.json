@@ -52,6 +52,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "Schalex.StringCalculator.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Schalex.StringCalculator.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Schalex.StringCalculator.Domain.dll": {}
+        }
       }
     }
   },
@@ -149,12 +159,18 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Schalex.StringCalculator.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Schalex.StringCalculator.Domain/Schalex.StringCalculator.Domain.csproj",
+      "msbuildProject": "../Schalex.StringCalculator.Domain/Schalex.StringCalculator.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.Extensions.Configuration.Abstractions >= 6.0.0",
-      "Microsoft.Extensions.DependencyInjection.Abstractions >= 6.0.0"
+      "Microsoft.Extensions.DependencyInjection.Abstractions >= 6.0.0",
+      "Schalex.StringCalculator.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -183,7 +199,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\schal\\source\\repos\\Maersk\\Schalex.StringCalculator\\Schalex.StringCalculator.Domain\\Schalex.StringCalculator.Domain.csproj": {
+              "projectPath": "C:\\Users\\schal\\source\\repos\\Maersk\\Schalex.StringCalculator\\Schalex.StringCalculator.Domain\\Schalex.StringCalculator.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -5,18 +5,22 @@ namespace Schalex.StringCalculator.Services
 {
     public class EntryPoint : IEntryPoint
     {
-        private readonly IInputValidator validator;
+        private readonly IConsoleCommunicator communicator;
 
-        public EntryPoint(IInputValidator validator)
+        public EntryPoint(IConsoleCommunicator communicator)
         {
-            this.validator = validator;
+            this.communicator = communicator;
         }
 
         public void Run()
         {
-            Console.WriteLine("Welcome to Maersk StringCalculator!");
-            Console.WriteLine("This calculator only supports !");
-            throw new NotImplementedException();
+            communicator.PrintGreeting();
+            string? input = null;
+
+            while(input != "q")
+            {
+                input = communicator.GetInput();
+            }
         }
     }
 }

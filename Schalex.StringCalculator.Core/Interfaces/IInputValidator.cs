@@ -1,7 +1,9 @@
-﻿namespace Schalex.StringCalculator.Core.Interfaces
+﻿using Schalex.StringCalculator.Domain;
+
+namespace Schalex.StringCalculator.Core.Interfaces
 {
     public interface IInputValidator
     {
-        bool Validate(string input);
+        bool Validate(StringInput input);
     }
 }

@@ -13,7 +13,9 @@ namespace Schalex.StringCalculator.Core
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddTransient<IInputValidator, InputValidator>();
+            services.AddScoped<IInputValidator, InputValidator>();
+            services.AddScoped<IInputSanitizer, InputSanitizer>();
+            services.AddScoped<ICalculator, Calculator>();
 
             return services;
         }

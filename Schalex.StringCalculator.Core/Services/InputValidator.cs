@@ -1,4 +1,5 @@
 ﻿using Schalex.StringCalculator.Core.Interfaces;
+using Schalex.StringCalculator.Domain;
 
 namespace Schalex.StringCalculator.Core.Services
 {
@@ -8,7 +9,8 @@ namespace Schalex.StringCalculator.Core.Services
         {
 
         }
-        public bool Validate(string input)
+
+        public bool Validate(StringInput input)
         {
             throw new NotImplementedException();
         }

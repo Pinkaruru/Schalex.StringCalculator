@@ -9,11 +9,12 @@ using System.Threading.Tasks;
 
 namespace Schalex.StringCalculator
 {
-    internal static class DependencyInjection
+    public static class DependencyInjection
     {
         public static IServiceCollection AddPresentation(this IServiceCollection services)
         {
-            services.AddTransient<IEntryPoint, EntryPoint>();
+            services.AddScoped<IEntryPoint, EntryPoint>();
+            services.AddScoped<IConsoleCommunicator, ConsoleCommunicator>();
 
             return services;
         }
