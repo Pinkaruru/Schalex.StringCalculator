@@ -13,7 +13,7 @@ namespace Schalex.StringCalculator.Core.Services
     {
         public void Sanitize(ref StringInput input)
         {
-            input.SetSanitizedInput(Regex.Replace(input.Input, @"\s", ""));
+            input.SetSanitizedInput(Regex.Replace(input.OriginalInput, @"\s", ""));
         }
     }
 }

@@ -10,16 +10,17 @@ namespace Schalex.StringCalculator.Domain
     {
         public StringInput(string input)
         {
-            Input = input;
+            OriginalInput = input;
         }
 
         public bool IsSanitized { get; private set; }
-        public string Input { get; private set; }
+        public string OriginalInput { get; private set; }
+        public string SanitizedInput { get; private set; }
 
-        public void SetSanitizedInput(string sanitizedInput)
+        public void SetSanitizedInput(string input)
         {
             IsSanitized = true;
-            Input = sanitizedInput;
+            SanitizedInput = input;
         }
     }
 }

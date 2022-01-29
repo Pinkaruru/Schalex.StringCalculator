@@ -1,4 +1,5 @@
-﻿using Schalex.StringCalculator.Interfaces;
+﻿using Schalex.StringCalculator.Domain;
+using Schalex.StringCalculator.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,11 @@ namespace Schalex.StringCalculator.Services
             Console.WriteLine("Welcome to Maersk StringCalculator!");
             Console.WriteLine("This calculator only supports addition and substractions with natural numbers");
             Console.WriteLine(@"Type ""q"" to exit the application.");
+        }
+
+        public void PrintResult(StringInput input, int result)
+        {
+            Console.WriteLine($"{input.SanitizedInput}={result}");
         }
     }
 }

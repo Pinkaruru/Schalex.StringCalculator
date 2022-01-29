@@ -26,18 +26,19 @@ namespace Schalex.StringCalculator.Core.Services
                 throw new ArgumentException($"{nameof(input)} is not sanitized");
             }
 
-            if (string.IsNullOrWhiteSpace(input.Input))
+            if (string.IsNullOrWhiteSpace(input.SanitizedInput))
             {
-                throw new ArgumentException($"{nameof(input.Input)} can't be null, empty or only containing whitespaces");
+                throw new ArgumentException($"{nameof(input.SanitizedInput)} can't be null, empty or only containing whitespaces");
             }
 
-            var validateCharactersResult = ValidateCharacters(input.Input);
+            var validateCharactersResult = ValidateCharacters(input.SanitizedInput);
             if (!validateCharactersResult)
             {
-                throw new InvalidInputCharactersException($"{nameof(input.Input)} contains invalid characters. Allowed characters: {AllowedCharacters}");
+                
+                throw new InvalidInputCharactersException($"{nameof(input.SanitizedInput)} contains invalid characters. Allowed characters: {AllowedCharacters}");
             }
 
-            var validateStructureResult = ValidateStructure(input.Input);
+            var validateStructureResult = ValidateStructure(input.SanitizedInput);
             if (!validateStructureResult)
             {
                 throw new InvalidInputStructureException();

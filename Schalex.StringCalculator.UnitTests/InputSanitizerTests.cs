@@ -32,7 +32,7 @@ namespace Schalex.StringCalculator.UnitTests
             inputSanitizer.Sanitize(ref stringInput);
 
             // Assert
-            stringInput.Input.Should().BeEquivalentTo("1+2");
+            stringInput.OriginalInput.Should().BeEquivalentTo("1+2");
         }
 
         [TestMethod]

@@ -15,6 +15,7 @@ namespace Schalex.StringCalculator.Core
         {
             services.AddScoped<IInputValidator, InputValidator>();
             services.AddScoped<IInputSanitizer, InputSanitizer>();
+            services.AddScoped<IShuntingYardConverter, ShuntingYardConverter>();
             services.AddScoped<ICalculator, Calculator>();
 
             return services;
