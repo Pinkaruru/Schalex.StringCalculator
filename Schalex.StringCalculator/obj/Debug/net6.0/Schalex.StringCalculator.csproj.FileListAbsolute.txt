@@ -44,3 +44,5 @@ C:\Users\schal\source\repos\Maersk\Schalex.StringCalculator\Schalex.StringCalcul
 C:\Users\schal\source\repos\Maersk\Schalex.StringCalculator\Schalex.StringCalculator\bin\Debug\net6.0\Schalex.StringCalculator.Core.dll
 C:\Users\schal\source\repos\Maersk\Schalex.StringCalculator\Schalex.StringCalculator\bin\Debug\net6.0\Schalex.StringCalculator.Core.pdb
 C:\Users\schal\source\repos\Maersk\Schalex.StringCalculator\Schalex.StringCalculator\obj\Debug\net6.0\Schalex.StringCalculator.csproj.CopyComplete
+C:\Users\schal\source\repos\Maersk\Schalex.StringCalculator\Schalex.StringCalculator\bin\Debug\net6.0\Schalex.StringCalculator.Domain.dll
+C:\Users\schal\source\repos\Maersk\Schalex.StringCalculator\Schalex.StringCalculator\bin\Debug\net6.0\Schalex.StringCalculator.Domain.pdb

@@ -22,7 +22,7 @@ namespace Schalex.StringCalculator.Services
         public void PrintGreeting()
         {
             Console.WriteLine("Welcome to Maersk StringCalculator!");
-            Console.WriteLine("This calculator only supports "); // TODO: add instructions
+            Console.WriteLine("This calculator only supports addition and substractions with natural numbers");
             Console.WriteLine(@"Type ""q"" to exit the application.");
         }
     }

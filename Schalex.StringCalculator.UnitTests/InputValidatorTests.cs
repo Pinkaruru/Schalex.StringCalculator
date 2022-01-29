@@ -2,6 +2,7 @@ using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Schalex.StringCalculator.Core.Interfaces;
+using Schalex.StringCalculator.Core.Services;
 using Schalex.StringCalculator.Domain;
 using Schalex.StringCalculator.Domain.Exceptions;
 using System;
@@ -13,16 +14,16 @@ namespace chalex.Maersk.CodingExercise.StringCalculator.Tests
     {
         private readonly IInputValidator inputValidator;
 
-        public InputValidatorTests(IInputValidator inputValidator)
+        public InputValidatorTests()
         {
-            this.inputValidator = inputValidator;
+            this.inputValidator = new InputValidator();
         }
 
         [TestMethod]
         public void Validate_Should_Succed_OnInputContainingWhiteListedCharacters()
         {
             // Arrange
-            var rawInput = "1 + 1 - 6";
+            var rawInput = "1+1-6";
             var input = new StringInput(rawInput);
             input.SetSanitizedInput(rawInput);
 
@@ -37,7 +38,7 @@ namespace chalex.Maersk.CodingExercise.StringCalculator.Tests
         public void Validate_Should_ThrowArgumentException_OnInputNotSanitized()
         {
             // Arrange
-            var rawInput = "1 + 1 - 6";
+            var rawInput = "1+1-6";
             var input = new StringInput(rawInput);
 
             // Act
@@ -51,12 +52,64 @@ namespace chalex.Maersk.CodingExercise.StringCalculator.Tests
         }
 
         [TestMethod]
-        public void Validate_Should_ThrowArgumentException_OnInputContainingComma()
+        public void Validate_Should_ThrowInvalidInputCharactersException_OnInputContainingComma()
         {
             // Arrange
-            var rawInput = "0, 1";
+            var rawInput = "0,1";
             var input = new StringInput(rawInput);
             input.SetSanitizedInput(rawInput);
+
+            // Act
+            Action validateAction = () =>
+            {
+                var result = inputValidator.Validate(input);
+            };
+
+            // Assert
+            validateAction.Should().Throw<InvalidInputCharactersException>();
+        }
+
+        [TestMethod]
+        public void Validate_Should_ThrowInvalidInputCharactersException_OnInputContainingLatinCharacters()
+        {
+            // Arrange
+            var rawInput = "1+2a";
+            var input = new StringInput(rawInput);
+            input.SetSanitizedInput(rawInput);
+
+            // Act
+            Action validateAction = () =>
+            {
+                var result = inputValidator.Validate(input);
+            };
+
+            // Assert
+            validateAction.Should().Throw<InvalidInputCharactersException>();
+        }
+
+        [TestMethod]
+        public void Validate_Should_ThrowArgumentNullException_OnInputBeingNull()
+        {
+            // Arrange
+            StringInput? input = null;
+
+            // Act
+            Action validateAction = () =>
+            {
+#pragma warning disable CS8604 // Possible null reference argument.
+                var result = inputValidator.Validate(input);
+#pragma warning restore CS8604 // Possible null reference argument.
+            };
+
+            // Assert
+            validateAction.Should().Throw<ArgumentNullException>();
+        }
+
+        [TestMethod]
+        public void Validate_Should_ThrowArgumentException_OnInputBeingEmpty()
+        {
+            // Arrange
+            StringInput? input = new StringInput(string.Empty);
 
             // Act
             Action validateAction = () =>
@@ -69,10 +122,10 @@ namespace chalex.Maersk.CodingExercise.StringCalculator.Tests
         }
 
         [TestMethod]
-        public void Validate_Should_ThrowArgumentException_OnInputContainingLatinCharacters()
+        public void Validate_Should_ThrowInvalidInputCharactersException_OnInputContainingMultiplication()
         {
             // Arrange
-            var rawInput = "1 + 2a";
+            var rawInput = "2*2";
             var input = new StringInput(rawInput);
             input.SetSanitizedInput(rawInput);
 
@@ -83,14 +136,14 @@ namespace chalex.Maersk.CodingExercise.StringCalculator.Tests
             };
 
             // Assert
-            validateAction.Should().Throw<ArgumentException>();
+            validateAction.Should().Throw<InvalidInputCharactersException>();
         }
 
         [TestMethod]
-        public void Validate_Should_ThrowUnsupportedOperationException_OnInputContainingMultiplication()
+        public void Validate_Should_ThrowInvalidInputCharactersException_OnInputContainingDivision()
         {
             // Arrange
-            var rawInput = "2 * 2";
+            var rawInput = "2/2";
             var input = new StringInput(rawInput);
             input.SetSanitizedInput(rawInput);
 
@@ -101,14 +154,14 @@ namespace chalex.Maersk.CodingExercise.StringCalculator.Tests
             };
 
             // Assert
-            validateAction.Should().Throw<UnsupportedOperationException>();
+            validateAction.Should().Throw<InvalidInputCharactersException>();
         }
 
         [TestMethod]
-        public void Validate_Should_ThrowUnsupportedOperationException_OnInputContainingDivision()
+        public void Validate_Should_ThrowInvalidInputStructureException_OnInputStartingWithOperator()
         {
             // Arrange
-            var rawInput = "2 / 2";
+            var rawInput = "+2+2";
             var input = new StringInput(rawInput);
             input.SetSanitizedInput(rawInput);
 
@@ -119,7 +172,44 @@ namespace chalex.Maersk.CodingExercise.StringCalculator.Tests
             };
 
             // Assert
-            validateAction.Should().Throw<UnsupportedOperationException>();
+            validateAction.Should().Throw<InvalidInputStructureException>();
         }
+
+        [TestMethod]
+        public void Validate_Should_ThrowInvalidInputStructureException_OnInputEndingWithOperator()
+        {
+            // Arrange
+            var rawInput = "2+2-";
+            var input = new StringInput(rawInput);
+            input.SetSanitizedInput(rawInput);
+
+            // Act
+            Action validateAction = () =>
+            {
+                var result = inputValidator.Validate(input);
+            };
+
+            // Assert
+            validateAction.Should().Throw<InvalidInputStructureException>();
+        }
+
+        [TestMethod]
+        public void Validate_Should_ThrowInvalidInputStructureException_OnInputContainDoubleAllowedOperatorsInOrder()
+        {
+            // Arrange
+            var rawInput = "2++2";
+            var input = new StringInput(rawInput);
+            input.SetSanitizedInput(rawInput);
+
+            // Act
+            Action validateAction = () =>
+            {
+                var result = inputValidator.Validate(input);
+            };
+
+            // Assert
+            validateAction.Should().Throw<InvalidInputStructureException>();
+        }
+
     }
 }
