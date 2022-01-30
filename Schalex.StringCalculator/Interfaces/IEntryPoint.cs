@@ -2,6 +2,6 @@
 {
     public interface IEntryPoint
     {
-        int Run();
+        void Run();
     }
 }

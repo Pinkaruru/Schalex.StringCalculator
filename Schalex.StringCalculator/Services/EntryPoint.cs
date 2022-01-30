@@ -1,5 +1,6 @@
 ﻿using Schalex.StringCalculator.Core.Interfaces;
 using Schalex.StringCalculator.Domain;
+using Schalex.StringCalculator.Domain.Exceptions;
 using Schalex.StringCalculator.Interfaces;
 
 namespace Schalex.StringCalculator.Services
@@ -16,23 +17,26 @@ namespace Schalex.StringCalculator.Services
             this.calculator = calculator ?? throw new ArgumentNullException(nameof(calculator));
         }
 
-        public int Run()
+        public void Run()
         {
             communicator.PrintGreeting();
-            string? input = null;
+            string? input = communicator.GetInput();
 
-            while(input != "q")
+            while (input != "q")
             {
-                input = communicator.GetInput();
+                try
+                {
+                    var stringInput = new StringInput(input);
+                    var result = calculator.Calculate(stringInput);
+                    communicator.PrintResult(stringInput, result);
 
-                var stringInput = new StringInput(input);
-                var result = calculator.Calculate(stringInput);
-
-                communicator.PrintResult(stringInput, result);
+                    input = communicator.GetInput();
+                }
+                catch (StringCalculatorException e)
+                {
+                    communicator.PrintErrorMessage(e);
+                }
             }
-
-            // TODO: Error handling
-            return 0;
         }
     }
 }

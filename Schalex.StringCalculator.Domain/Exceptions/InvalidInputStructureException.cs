@@ -9,19 +9,15 @@ namespace Schalex.StringCalculator.Domain.Exceptions
 {
     public class InvalidInputStructureException : StringCalculatorException
     {
-        public InvalidInputStructureException()
+        public InvalidInputStructureException(string uiMessage) : base(uiMessage)
         {
         }
 
-        public InvalidInputStructureException(string? message) : base(message)
+        public InvalidInputStructureException(string uiMessage, string? message) : base(uiMessage, message)
         {
         }
 
-        public InvalidInputStructureException(string? message, Exception? innerException) : base(message, innerException)
-        {
-        }
-
-        protected InvalidInputStructureException(SerializationInfo info, StreamingContext context) : base(info, context)
+        public InvalidInputStructureException(string uiMessage, string? message, Exception? innerException) : base(uiMessage, message, innerException)
         {
         }
     }

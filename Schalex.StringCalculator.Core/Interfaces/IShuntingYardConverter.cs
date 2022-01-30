@@ -10,7 +10,7 @@ namespace Schalex.StringCalculator.Core.Interfaces
     public interface IShuntingYardConverter
     {
         /// <summary>
-        /// Converts a given string with mathematical expressions specified in infix notation to a Queue in RPN order. For reference: https://en.wikipedia.org/wiki/Shunting-yard_algorithm
+        /// Converts a given StringInput with mathematical expressions specified in infix notation to a queue in RPN order. For reference: https://en.wikipedia.org/wiki/Shunting-yard_algorithm
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>

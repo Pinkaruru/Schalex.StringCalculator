@@ -24,19 +24,22 @@ namespace Schalex.StringCalculator.Core.Services
 
         public int Calculate(StringInput input)
         {
-            sanitizer.Sanitize(ref input);
+            sanitizer.Sanitize(input);
             validator.Validate(input);
-            var rpnQueue = converter.Convert(input);
+            return CalculateRpn(converter.Convert(input));
+        }
 
+        private int CalculateRpn(IEnumerable<string> rpnOperation)
+        {
             var rpnCalculationStack = new Stack<int>();
-            foreach(var rpnToken in rpnQueue)
+            foreach (var rpnToken in rpnOperation)
             {
-                if(int.TryParse(rpnToken, out int number))
+                if (int.TryParse(rpnToken, out int number))
                 {
                     rpnCalculationStack.Push(number);
                     continue;
                 }
-
+                
                 switch (rpnToken)
                 {
                     case "+":
@@ -47,7 +50,7 @@ namespace Schalex.StringCalculator.Core.Services
                         rpnCalculationStack.Push(rpnCalculationStack.Pop() - number);
                         break;
                     default:
-                        throw new InvalidOperationException($"Operation with operator '{rpnToken}' not supported.");
+                        throw new UnsupportedOperationException($"Operation with operator '{rpnToken}' not supported.");
                 }
             }
 

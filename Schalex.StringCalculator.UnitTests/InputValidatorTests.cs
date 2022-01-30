@@ -7,7 +7,7 @@ using Schalex.StringCalculator.Domain;
 using Schalex.StringCalculator.Domain.Exceptions;
 using System;
 
-namespace chalex.Maersk.CodingExercise.StringCalculator.Tests
+namespace Schalex.StringCalculator.UnitTests
 {
     [TestClass]
     public class InputValidatorTests

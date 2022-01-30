@@ -28,7 +28,7 @@ namespace Schalex.StringCalculator.Core.Services
 
             if (string.IsNullOrWhiteSpace(input.SanitizedInput))
             {
-                throw new ArgumentException($"{nameof(input.SanitizedInput)} can't be null, empty or only containing whitespaces");
+                throw new InvalidInputCharactersException($"{nameof(input.SanitizedInput)} can't be null, empty or only containing whitespaces");
             }
 
             var validateCharactersResult = ValidateCharacters(input.SanitizedInput);
@@ -41,7 +41,7 @@ namespace Schalex.StringCalculator.Core.Services
             var validateStructureResult = ValidateStructure(input.SanitizedInput);
             if (!validateStructureResult)
             {
-                throw new InvalidInputStructureException();
+                throw new InvalidInputStructureException($"{nameof(input.SanitizedInput)} has invalid structure. Valid structure examples: 10+1, 30-5, 10-5+15, ...");
             }
 
             return validateCharactersResult && validateStructureResult;

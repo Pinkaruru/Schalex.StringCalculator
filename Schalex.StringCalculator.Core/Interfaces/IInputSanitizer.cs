@@ -9,6 +9,6 @@ namespace Schalex.StringCalculator.Core.Interfaces
 {
     public interface IInputSanitizer
     {
-        void Sanitize(ref StringInput input);
+        StringInput Sanitize(StringInput input);
     }
 }

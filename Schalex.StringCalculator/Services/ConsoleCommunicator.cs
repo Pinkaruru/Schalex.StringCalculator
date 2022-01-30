@@ -1,4 +1,5 @@
 ﻿using Schalex.StringCalculator.Domain;
+using Schalex.StringCalculator.Domain.Exceptions;
 using Schalex.StringCalculator.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,11 @@ namespace Schalex.StringCalculator.Services
             ArgumentNullException.ThrowIfNull(input);
 
             return input;
+        }
+
+        public void PrintErrorMessage(StringCalculatorException e)
+        {
+            Console.WriteLine(e.UiMessage);
         }
 
         public void PrintGreeting()

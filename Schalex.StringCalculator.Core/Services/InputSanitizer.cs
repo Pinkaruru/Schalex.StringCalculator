@@ -11,9 +11,10 @@ namespace Schalex.StringCalculator.Core.Services
 {
     public class InputSanitizer : IInputSanitizer
     {
-        public void Sanitize(ref StringInput input)
+        public StringInput Sanitize(StringInput input)
         {
             input.SetSanitizedInput(Regex.Replace(input.OriginalInput, @"\s", ""));
+            return input;
         }
     }
 }

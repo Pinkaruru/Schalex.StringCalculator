@@ -29,10 +29,10 @@ namespace Schalex.StringCalculator.UnitTests
             var stringInput = new StringInput(rawInput);
 
             // Act
-            inputSanitizer.Sanitize(ref stringInput);
+            inputSanitizer.Sanitize(stringInput);
 
             // Assert
-            stringInput.OriginalInput.Should().BeEquivalentTo("1+2");
+            stringInput.SanitizedInput.Should().BeEquivalentTo("1+2");
         }
 
         [TestMethod]
@@ -42,7 +42,7 @@ namespace Schalex.StringCalculator.UnitTests
             var stringInput = new StringInput("1+2");
 
             // Act
-            inputSanitizer.Sanitize(ref stringInput);
+            inputSanitizer.Sanitize(stringInput);
 
             // Assert
             stringInput.IsSanitized.Should().BeTrue();

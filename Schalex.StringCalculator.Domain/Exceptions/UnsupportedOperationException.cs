@@ -9,19 +9,15 @@ namespace Schalex.StringCalculator.Domain.Exceptions
 {
     public class UnsupportedOperationException : StringCalculatorException
     {
-        public UnsupportedOperationException()
+        public UnsupportedOperationException(string uiMessage) : base(uiMessage)
         {
         }
 
-        public UnsupportedOperationException(string? message) : base(message)
+        public UnsupportedOperationException(string uiMessage, string? message) : base(uiMessage, message)
         {
         }
 
-        public UnsupportedOperationException(string? message, Exception? innerException) : base(message, innerException)
-        {
-        }
-
-        protected UnsupportedOperationException(SerializationInfo info, StreamingContext context) : base(info, context)
+        public UnsupportedOperationException(string uiMessage, string? message, Exception? innerException) : base(uiMessage, message, innerException)
         {
         }
     }
